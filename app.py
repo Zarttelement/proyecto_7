@@ -2,6 +2,10 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+# Encabezado
+st.title('Análisis de Vehículos Usados')
+st.subheader('Visualización de datos de odómetro y precio con Plotly')
+
 # Leer los datos
 car_data = pd.read_csv('vehicles_us.csv')
 
@@ -20,4 +24,3 @@ if show_scatter:
     st.write('Diagrama de dispersión entre odómetro y precio')
     fig = px.scatter(car_data, x="odometer", y="price", color="type")
     st.plotly_chart(fig, use_container_width=True)
-
